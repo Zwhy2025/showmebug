@@ -1,10 +1,33 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 接雨水
+// https://leetcode.cn/problems/trapping-rain-water/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 接雨水" << '\n';
-    std::cout << "Slug: trapping-rain-water" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    vector<int> height{/* TODO */};
+        int expected = 0;
+        auto actual = s.trap(height);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
