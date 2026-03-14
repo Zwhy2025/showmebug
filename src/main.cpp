@@ -1,10 +1,34 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 单词搜索
+// https://leetcode.cn/problems/word-search/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 单词搜索" << '\n';
-    std::cout << "Slug: word-search" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    vector<vector<char>> board{/* TODO */};
+    string word = "";
+        bool expected = false;
+        auto actual = s.exist(board, word);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
