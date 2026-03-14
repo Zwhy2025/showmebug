@@ -3,14 +3,13 @@
 这个脚手架用于 LeetCode/面试刷题，提供：
 - CMake 构建
 - VS Code 调试与任务
-- Git 分支切题工作流
-- 默认题目模板
+- 本地运行入口
+- 当前分支提交脚本
 
 ## 目录结构
 - `src/solution.hpp` 题解实现
-- `src/main.cpp` 本地运行入口
-- `templates/src/` 默认模板
-- `scripts/lc` 一键切题脚本
+- `src/main.cpp` 本地测试入口
+- `scripts/commit.sh` 提交当前分支代码
 - `.vscode/` VS Code 配置
 
 ## 快速开始
@@ -31,33 +30,18 @@ cmake --build build
 ```
 
 ## 推荐工作流
-日常只记两条命令：
+日常只需要这两条命令：
 
 ```bash
-./scripts/lc new palindrome-linked-list "回文链表"
-./scripts/lc done
-```
-
-你平时这样用：
-
-```bash
-./scripts/lc new palindrome-linked-list "回文链表"
 ./run.sh
-./scripts/lc done
+./scripts/commit.sh
 ```
 
 说明：
-- `new` 会创建题目分支；如果这题已经做过，会直接切回那条分支
-- `done` 会自动执行 `git add src` 和 `git commit`
-- `done` 默认提交信息是 `update <slug>`，也可以自己写：`./scripts/lc done "solve palindrome-linked-list"`
-- 想回看旧题时，重复执行 `./scripts/lc new <slug>` 就行
-
-可选命令：
-
-```bash
-./scripts/lc list
-./scripts/lc template
-```
+- `run.sh` 会配置、编译并运行当前题目的本地测试入口
+- `commit.sh` 会只提交 `src/` 下的代码
+- 提交信息格式是 `当前分支名/当前时间`
+- 例如：`codex/hot100-118-杨辉三角/20260314-183000`
 
 ## VS Code 使用
 - 任务：
