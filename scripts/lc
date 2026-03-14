@@ -11,11 +11,13 @@ usage() {
     cat <<'EOF'
 Usage:
   ./scripts/lc new <slug> [title]   Create or switch to a problem branch and reset src/ from template
+  ./scripts/lc done [message]       Commit current src/ changes
   ./scripts/lc list                 List saved problem branches
   ./scripts/lc template             Switch back to the template branch
 
 Examples:
   ./scripts/lc new palindrome-linked-list "回文链表"
+  ./scripts/lc done
   ./scripts/lc list
   ./scripts/lc template
 EOF
@@ -41,6 +43,22 @@ ensure_template_files() {
         echo "Error: missing template files under templates/src/" >&2
         exit 1
     }
+}
+
+current_branch() {
+    git -C "$ROOT_DIR" branch --show-current
+}
+
+default_commit_message() {
+    local branch_name
+    branch_name="$(current_branch)"
+
+    if [[ "$branch_name" == "${BRANCH_PREFIX}"* ]]; then
+        printf 'update %s\n' "${branch_name#${BRANCH_PREFIX}}"
+        return
+    fi
+
+    printf 'update src\n'
 }
 
 escape_sed_replacement() {
@@ -95,6 +113,29 @@ list_problems() {
     git -C "$ROOT_DIR" branch --list "${BRANCH_PREFIX}*" | sed 's/^..//'
 }
 
+done_problem() {
+    local message="${1:-}"
+
+    require_git_repo
+
+    if [[ "$(current_branch)" == "$DEFAULT_BRANCH" ]]; then
+        echo "Error: you are on $DEFAULT_BRANCH. Start a problem first with ./scripts/lc new <slug> [title]." >&2
+        exit 1
+    fi
+
+    if [[ -z "$(git -C "$ROOT_DIR" status --porcelain -- src)" ]]; then
+        echo "No src changes to commit"
+        return
+    fi
+
+    if [[ -z "$message" ]]; then
+        message="$(default_commit_message)"
+    fi
+
+    git -C "$ROOT_DIR" add src
+    git -C "$ROOT_DIR" commit -m "$message"
+}
+
 switch_template() {
     require_git_repo
     require_clean_tree
@@ -110,6 +151,13 @@ main() {
             exit 1
         }
         new_problem "$2" "${3:-$2}"
+        ;;
+    done)
+        [[ $# -le 2 ]] || {
+            usage
+            exit 1
+        }
+        done_problem "${2:-}"
         ;;
     list)
         [[ $# -eq 1 ]] || {

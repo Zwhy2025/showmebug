@@ -31,47 +31,33 @@ cmake --build build
 ```
 
 ## 推荐工作流
-保持 `src/` 只放“当前正在做的一题”，每道题对应一个 git 分支。
+日常只记两条命令：
 
-如果这个目录还没初始化 git：
-```bash
-git init -b main
-git add .
-git commit -m "init showmebug"
-chmod +x ./scripts/lc
-```
-
-开始一题：
 ```bash
 ./scripts/lc new palindrome-linked-list "回文链表"
+./scripts/lc done
 ```
 
-做题时：
+你平时这样用：
+
 ```bash
+./scripts/lc new palindrome-linked-list "回文链表"
 ./run.sh
-git add src
-git commit -m "solve palindrome-linked-list"
-```
-
-以后想继续做这题：
-```bash
-git switch codex/lc-palindrome-linked-list
-```
-
-查看已有题目分支：
-```bash
-./scripts/lc list
-```
-
-切回模板分支：
-```bash
-./scripts/lc template
+./scripts/lc done
 ```
 
 说明：
-- `./scripts/lc new ...` 会从 `main` 创建题目分支，并把 `src/` 重置成模板
-- 如果题目分支已经存在，脚本会直接切过去
-- 切分支前要求工作区干净，避免题解被覆盖
+- `new` 会创建题目分支；如果这题已经做过，会直接切回那条分支
+- `done` 会自动执行 `git add src` 和 `git commit`
+- `done` 默认提交信息是 `update <slug>`，也可以自己写：`./scripts/lc done "solve palindrome-linked-list"`
+- 想回看旧题时，重复执行 `./scripts/lc new <slug>` 就行
+
+可选命令：
+
+```bash
+./scripts/lc list
+./scripts/lc template
+```
 
 ## VS Code 使用
 - 任务：
