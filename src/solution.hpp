@@ -30,8 +30,30 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 class Solution {
-public:
+  public:
     bool hasCycle(ListNode *head) {
-        
+
+        if (!head || !head->next) {
+            return false;
+        }
+        auto start = head->next;
+        auto end = head;
+
+        while (start != end) {
+            if (!start || !end) {
+                return false;
+            }
+            if (!start->next || !start->next->next) {
+                return false;
+            }
+
+            if (!end->next) {
+                return false;
+            }
+
+            start = start->next->next;
+            end = end->next;
+        }
+        return true;
     }
 };

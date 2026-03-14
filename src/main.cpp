@@ -2,6 +2,7 @@
 #include <optional>
 #include <queue>
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 using namespace std;
@@ -28,12 +29,36 @@ ListNode *buildList(const vector<int> &values) {
     return dummy.next;
 }
 
-vector<int> listToVector(ListNode *head) {
-    vector<int> values;
-    for (ListNode *node = head; node != nullptr; node = node->next) {
-        values.push_back(node->val);
+ListNode *buildCycleList(const vector<int> &values, int pos) {
+    ListNode *head = buildList(values);
+    if (head == nullptr || pos < 0) {
+        return head;
     }
-    return values;
+
+    ListNode *tail = head;
+    ListNode *entry = nullptr;
+    int index = 0;
+    for (ListNode *node = head; node != nullptr; node = node->next, ++index) {
+        if (index == pos) {
+            entry = node;
+        }
+        tail = node;
+    }
+    if (tail != nullptr && entry != nullptr) {
+        tail->next = entry;
+    }
+    return head;
+}
+
+void freeList(ListNode *head) {
+    unordered_set<ListNode *> visited;
+    ListNode *node = head;
+    while (node != nullptr && !visited.count(node)) {
+        visited.insert(node);
+        ListNode *next = node->next;
+        delete node;
+        node = next;
+    }
 }
 
 
@@ -41,11 +66,35 @@ int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    ListNode* head = buildList({/* TODO */});
-        bool expected = false;
+        ListNode *head = buildCycleList({3, 2, 0, -4}, 1);
+        bool expected = true;
         auto actual = s.hasCycle(head);
         checkEqual("sample-1", actual, expected);
+        freeList(head);
+    }
+
+    {
+        ListNode *head = buildCycleList({1, 2}, 0);
+        bool expected = true;
+        auto actual = s.hasCycle(head);
+        checkEqual("sample-2", actual, expected);
+        freeList(head);
+    }
+
+    {
+        ListNode *head = buildCycleList({1}, -1);
+        bool expected = false;
+        auto actual = s.hasCycle(head);
+        checkEqual("sample-3", actual, expected);
+        freeList(head);
+    }
+
+    {
+        ListNode *head = buildCycleList({1}, 0);
+        bool expected = true;
+        auto actual = s.hasCycle(head);
+        checkEqual("sample-4", actual, expected);
+        freeList(head);
     }
 
     return 0;
