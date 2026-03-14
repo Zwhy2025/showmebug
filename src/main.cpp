@@ -1,10 +1,33 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 腐烂的橘子
+// https://leetcode.cn/problems/rotting-oranges/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 腐烂的橘子" << '\n';
-    std::cout << "Slug: rotting-oranges" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    vector<vector<int>> grid{/* TODO */};
+        int expected = 0;
+        auto actual = s.orangesRotting(grid);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
