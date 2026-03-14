@@ -1,36 +1,51 @@
 #pragma once
 
 #include <algorithm>
+#include <array>
+#include <bitset>
+#include <cmath>
+#include <cstdint>
+#include <deque>
+#include <functional>
+#include <limits>
+#include <map>
+#include <numeric>
+#include <optional>
 #include <queue>
+#include <set>
 #include <stack>
 #include <string>
+#include <tuple>
 #include <unordered_map>
 #include <unordered_set>
+#include <utility>
 #include <vector>
 
-struct ListNode {
-    int val;
-    ListNode *next;
+using namespace std;
 
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *nextNode) : val(x), next(nextNode) {}
+class Trie {
+public:
+    Trie() {
+        
+    }
+    
+    void insert(string word) {
+        
+    }
+    
+    bool search(string word) {
+        
+    }
+    
+    bool startsWith(string prefix) {
+        
+    }
 };
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *leftNode, TreeNode *rightNode)
-        : val(x), left(leftNode), right(rightNode) {}
-};
-
-class Solution {
-  public:
-    // TODO: paste the current LeetCode method signature here.
-    // Example:
-    // int search(std::vector<int> &nums, int target) { return -1; }
-};
+/**
+ * Your Trie object will be instantiated and called as such:
+ * Trie* obj = new Trie();
+ * obj->insert(word);
+ * bool param_2 = obj->search(word);
+ * bool param_3 = obj->startsWith(prefix);
+ */
