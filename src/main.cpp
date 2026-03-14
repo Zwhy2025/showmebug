@@ -1,10 +1,30 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// LRU 缓存
+// https://leetcode.cn/problems/lru-cache/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: LRU 缓存" << '\n';
-    std::cout << "Slug: lru-cache" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    // TODO: add operation-based tests for LRUCache.
+    // Example:
+    // LRUCache obj(/* TODO */);
+    // auto actual = obj.someMethod(/* TODO */);
+    // int expected = 0;
+    // checkEqual("sample-1", actual, expected);
+    cout << "Edit src/main.cpp to add operation-based tests." << '\n';
     return 0;
 }
