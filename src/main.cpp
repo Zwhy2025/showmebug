@@ -1,10 +1,33 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 完全平方数
+// https://leetcode.cn/problems/perfect-squares/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 完全平方数" << '\n';
-    std::cout << "Slug: perfect-squares" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    int n = 0;
+        int expected = 0;
+        auto actual = s.numSquares(n);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
