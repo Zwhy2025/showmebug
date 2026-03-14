@@ -1,10 +1,34 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 滑动窗口最大值
+// https://leetcode.cn/problems/sliding-window-maximum/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 滑动窗口最大值" << '\n';
-    std::cout << "Slug: sliding-window-maximum" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    vector<int> nums{/* TODO */};
+    int k = 0;
+        vector<int> expected{/* TODO */};
+        auto actual = s.maxSlidingWindow(nums, k);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
