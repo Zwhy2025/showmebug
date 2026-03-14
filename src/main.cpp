@@ -1,10 +1,33 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 字符串解码
+// https://leetcode.cn/problems/decode-string/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 字符串解码" << '\n';
-    std::cout << "Slug: decode-string" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    string s = "";
+        string expected = "";
+        auto actual = s.decodeString(s);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
