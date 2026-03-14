@@ -1,10 +1,30 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 实现 Trie (前缀树)
+// https://leetcode.cn/problems/implement-trie-prefix-tree/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 实现 Trie (前缀树)" << '\n';
-    std::cout << "Slug: implement-trie-prefix-tree" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    // TODO: add operation-based tests for Trie.
+    // Example:
+    // Trie obj(/* TODO */);
+    // auto actual = obj.someMethod(/* TODO */);
+    // int expected = 0;
+    // checkEqual("sample-1", actual, expected);
+    cout << "Edit src/main.cpp to add operation-based tests." << '\n';
     return 0;
 }
