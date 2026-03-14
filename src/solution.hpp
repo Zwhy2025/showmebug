@@ -1,36 +1,46 @@
 #pragma once
 
 #include <algorithm>
+#include <array>
+#include <bitset>
+#include <cmath>
+#include <cstdint>
+#include <deque>
+#include <functional>
+#include <limits>
+#include <map>
+#include <numeric>
+#include <optional>
 #include <queue>
+#include <set>
 #include <stack>
 #include <string>
+#include <tuple>
 #include <unordered_map>
 #include <unordered_set>
+#include <utility>
 #include <vector>
 
-struct ListNode {
-    int val;
-    ListNode *next;
+using namespace std;
 
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *nextNode) : val(x), next(nextNode) {}
+class LRUCache {
+public:
+    LRUCache(int capacity) {
+        
+    }
+    
+    int get(int key) {
+        
+    }
+    
+    void put(int key, int value) {
+        
+    }
 };
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *leftNode, TreeNode *rightNode)
-        : val(x), left(leftNode), right(rightNode) {}
-};
-
-class Solution {
-  public:
-    // TODO: paste the current LeetCode method signature here.
-    // Example:
-    // int search(std::vector<int> &nums, int target) { return -1; }
-};
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache* obj = new LRUCache(capacity);
+ * int param_1 = obj->get(key);
+ * obj->put(key,value);
+ */
