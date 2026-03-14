@@ -36,16 +36,39 @@ vector<int> listToVector(ListNode *head) {
     return values;
 }
 
+void freeList(ListNode *head) {
+    while (head != nullptr) {
+        ListNode *next = head->next;
+        delete head;
+        head = next;
+    }
+}
 
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    ListNode* head = buildList({/* TODO */});
-        bool expected = false;
+        ListNode *head = buildList({1, 2, 2, 1});
+        bool expected = true;
         auto actual = s.isPalindrome(head);
         checkEqual("sample-1", actual, expected);
+        freeList(head);
+    }
+
+    {
+        ListNode *head = buildList({1, 2});
+        bool expected = false;
+        auto actual = s.isPalindrome(head);
+        checkEqual("sample-2", actual, expected);
+        freeList(head);
+    }
+
+    {
+        ListNode *head = buildList({1, 2, 3, 2, 1});
+        bool expected = true;
+        auto actual = s.isPalindrome(head);
+        checkEqual("sample-3", actual, expected);
+        freeList(head);
     }
 
     return 0;

@@ -32,8 +32,21 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 class Solution {
-public:
-    bool isPalindrome(ListNode* head) {
-        
+  public:
+    bool isPalindrome(ListNode *head) {
+
+        auto it = head;
+        std::vector<int> nums;
+        while (it != nullptr) {
+            nums.push_back(it->val);
+            it = it->next;
+        }
+
+        for (int i = 0, j = nums.size() - 1; i <= nums.size() / 2; ++i, j--) {
+            if (nums[i] != nums[j]) {
+                return false;
+            }
+        }
+        return true;
     }
 };
