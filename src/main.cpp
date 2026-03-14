@@ -1,10 +1,33 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 缺失的第一个正数
+// https://leetcode.cn/problems/first-missing-positive/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 缺失的第一个正数" << '\n';
-    std::cout << "Slug: first-missing-positive" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    vector<int> nums{/* TODO */};
+        int expected = 0;
+        auto actual = s.firstMissingPositive(nums);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
