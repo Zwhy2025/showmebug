@@ -49,5 +49,12 @@ int main() {
         checkEqual("sample-4", nums, expected);
     }
 
+    {
+        vector<int> nums{1, 0, 1};
+        vector<int> expected{1, 1, 0};
+        s.moveZeroes(nums);
+        checkEqual("sample-5", nums, expected);
+    }
+
     return 0;
 }

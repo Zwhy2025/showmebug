@@ -31,22 +31,29 @@ class Solution {
     void moveZeroes(vector<int> &nums) {
         std::cout << "\n before nums: ";
         for (int i = 0; i < nums.size(); ++i) {
-            std::cout << " " << i;
+            std::cout << " " << nums[i];
         }
         std::cout << std::endl;
-        for (int i = 0; i < nums.size(); ++i) {
+        int sut = 0;
+        for (int i = 0; i < nums.size();) {
+            if (i == nums.size() - 1 - sut) {
+                std::cout << "end nums: ";
+                for (int i = 0; i < nums.size(); ++i) {
+                    std::cout << " " << nums[i];
+                }
+                std::cout << std::endl;
+                return;
+            }
+
             if (nums[i] == 0) {
-                for (int j = i; j < nums.size(); ++j) {
+                for (int j = i; j < nums.size() - 1; ++j) {
                     nums[j] = nums[j + 1];
                 }
-                nums[nums.size() - 1 - i] = 0;
+                nums[nums.size() - 1 - sut] = 0;
+                sut++;
+            } else {
+                i++;
             }
         }
-
-        std::cout << "end nums: ";
-        for (int i = 0; i < nums.size(); ++i) {
-            std::cout << " " << i;
-        }
-        std::cout << std::endl;
     }
 };
