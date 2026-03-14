@@ -22,10 +22,31 @@ int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> nums{/* TODO */};
+        vector<int> nums{0, 1, 0, 3, 12};
+        vector<int> expected{1, 3, 12, 0, 0};
         s.moveZeroes(nums);
-        cout << "sample-1: executed (add expected checks if needed)" << '\n';
+        checkEqual("sample-1", nums, expected);
+    }
+
+    {
+        vector<int> nums{0};
+        vector<int> expected{0};
+        s.moveZeroes(nums);
+        checkEqual("sample-2", nums, expected);
+    }
+
+    {
+        vector<int> nums{1, 2, 3};
+        vector<int> expected{1, 2, 3};
+        s.moveZeroes(nums);
+        checkEqual("sample-3", nums, expected);
+    }
+
+    {
+        vector<int> nums{0, 0, 1};
+        vector<int> expected{1, 0, 0};
+        s.moveZeroes(nums);
+        checkEqual("sample-4", nums, expected);
     }
 
     return 0;
