@@ -1,10 +1,33 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// N 皇后
+// https://leetcode.cn/problems/n-queens/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: N 皇后" << '\n';
-    std::cout << "Slug: n-queens" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    int n = 0;
+        vector<vector<string>> expected{/* TODO */};
+        auto actual = s.solveNQueens(n);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
