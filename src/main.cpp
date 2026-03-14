@@ -1,10 +1,34 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 最小覆盖子串
+// https://leetcode.cn/problems/minimum-window-substring/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 最小覆盖子串" << '\n';
-    std::cout << "Slug: minimum-window-substring" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    string s = "";
+    string t = "";
+        string expected = "";
+        auto actual = s.minWindow(s, t);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
