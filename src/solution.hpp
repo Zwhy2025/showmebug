@@ -28,32 +28,32 @@ using namespace std;
 
 class Solution {
   public:
+    template <typename T>
+    void printVector(const std::vector<T> &nums, const std::string &name = "nums") {
+        std::cout << name << ": ";
+        for (int i = 0; i < static_cast<int>(nums.size()); ++i) {
+            if (i)
+                std::cout << ' ';
+            std::cout << nums[i];
+        }
+        std::cout << '\n';
+    }
     void moveZeroes(vector<int> &nums) {
-        std::cout << "\n before nums: ";
-        for (int i = 0; i < nums.size(); ++i) {
-            std::cout << " " << nums[i];
-        }
-        std::cout << std::endl;
-        int sut = 0;
-        for (int i = 0; i < nums.size();) {
-            if (i == nums.size() - 1 - sut) {
-                std::cout << "end nums: ";
-                for (int i = 0; i < nums.size(); ++i) {
-                    std::cout << " " << nums[i];
-                }
-                std::cout << std::endl;
-                return;
-            }
+        int it = 0, that = it;
+        printVector(nums, "1");
 
-            if (nums[i] == 0) {
-                for (int j = i; j < nums.size() - 1; ++j) {
-                    nums[j] = nums[j + 1];
-                }
-                nums[nums.size() - 1 - sut] = 0;
-                sut++;
-            } else {
-                i++;
+        for (; it < nums.size();) {
+            if (nums[it] != 0) {
+                nums[that] = nums[it];
+                that++;
             }
+            it++;
         }
+
+        printVector(nums, "2");
+        for (int i = nums.size() - 1; i > nums.size() - 1 - (it - that); --i) {
+            nums[i] = 0;
+        }
+        printVector(nums, "3");
     }
 };
