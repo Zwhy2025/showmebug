@@ -3,8 +3,8 @@
 #include "solution.hpp"
 
 int main() {
-    std::cout << "Current problem: Scratch Pad" << '\n';
-    std::cout << "Slug: scratch" << '\n';
+    std::cout << "Current problem: 二叉树中的最大路径和" << '\n';
+    std::cout << "Slug: binary-tree-maximum-path-sum" << '\n';
     std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
     return 0;
 }
