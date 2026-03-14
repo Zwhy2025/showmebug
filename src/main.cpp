@@ -1,10 +1,33 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 杨辉三角
+// https://leetcode.cn/problems/pascals-triangle/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 杨辉三角" << '\n';
-    std::cout << "Slug: pascals-triangle" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    int numRows = 0;
+        vector<vector<int>> expected{/* TODO */};
+        auto actual = s.generate(numRows);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
