@@ -1,10 +1,17 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 相交链表
+// https://leetcode.cn/problems/intersection-of-two-linked-lists/
+
 int main() {
-    std::cout << "Current problem: 相交链表" << '\n';
-    std::cout << "Slug: intersection-of-two-linked-lists" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    cout << "Edit src/main.cpp to add local test cases." << '\n';
     return 0;
 }
