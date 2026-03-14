@@ -1,10 +1,33 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 全排列
+// https://leetcode.cn/problems/permutations/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
 int main() {
-    std::cout << "Current problem: 全排列" << '\n';
-    std::cout << "Slug: permutations" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    vector<int> nums{/* TODO */};
+        vector<vector<int>> expected{/* TODO */};
+        auto actual = s.permute(nums);
+        checkEqual("sample-1", actual, expected);
+    }
+
     return 0;
 }
