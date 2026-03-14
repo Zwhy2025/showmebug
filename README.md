@@ -9,7 +9,7 @@
 ## 目录结构
 - `src/solution.hpp` 题解实现
 - `src/main.cpp` 本地测试入口
-- `scripts/commit.sh` 提交当前分支代码
+- `commit.sh` 提交当前分支代码
 - `.vscode/` VS Code 配置
 
 ## 快速开始
@@ -34,7 +34,7 @@ cmake --build build
 
 ```bash
 ./run.sh
-./scripts/commit.sh
+./commit.sh
 ```
 
 说明：
