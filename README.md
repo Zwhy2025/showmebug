@@ -33,7 +33,7 @@ cmake --build build
 ## 推荐工作流
 保持 `src/` 只放“当前正在做的一题”，每道题对应一个 git 分支。
 
-首次使用时：
+如果这个目录还没初始化 git：
 ```bash
 git init -b main
 git add .
