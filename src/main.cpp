@@ -1,10 +1,95 @@
 #include <iostream>
+#include <optional>
+#include <queue>
+#include <string>
+#include <vector>
+
+using namespace std;
 
 #include "solution.hpp"
 
+// 从前序与中序遍历序列构造二叉树
+// https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
+
+
+TreeNode *buildTree(const vector<optional<int>> &values) {
+    if (values.empty() || !values[0].has_value()) {
+        return nullptr;
+    }
+
+    TreeNode *root = new TreeNode(*values[0]);
+    queue<TreeNode *> nodes;
+    nodes.push(root);
+
+    size_t index = 1;
+    while (!nodes.empty() && index < values.size()) {
+        TreeNode *current = nodes.front();
+        nodes.pop();
+
+        if (index < values.size() && values[index].has_value()) {
+            current->left = new TreeNode(*values[index]);
+            nodes.push(current->left);
+        }
+        ++index;
+
+        if (index < values.size() && values[index].has_value()) {
+            current->right = new TreeNode(*values[index]);
+            nodes.push(current->right);
+        }
+        ++index;
+    }
+
+    return root;
+}
+
+vector<optional<int>> treeToLevelOrder(TreeNode *root) {
+    if (root == nullptr) {
+        return {};
+    }
+
+    vector<optional<int>> values;
+    queue<TreeNode *> nodes;
+    nodes.push(root);
+
+    while (!nodes.empty()) {
+        TreeNode *current = nodes.front();
+        nodes.pop();
+
+        if (current == nullptr) {
+            values.push_back(nullopt);
+            continue;
+        }
+
+        values.push_back(current->val);
+        nodes.push(current->left);
+        nodes.push(current->right);
+    }
+
+    while (!values.empty() && !values.back().has_value()) {
+        values.pop_back();
+    }
+
+    return values;
+}
+
+
 int main() {
-    std::cout << "Current problem: 从前序与中序遍历序列构造二叉树" << '\n';
-    std::cout << "Slug: construct-binary-tree-from-preorder-and-inorder-traversal" << '\n';
-    std::cout << "Edit src/solution.hpp and src/main.cpp for local testing." << '\n';
+    Solution s;
+
+    {
+        // TODO: replace the placeholders below with a real sample.
+    vector<int> preorder{/* TODO */};
+    vector<int> inorder{/* TODO */};
+        vector<optional<int>> expected{/* TODO */};
+        auto actual = s.buildTree(preorder, inorder);
+        checkEqual("sample-1", treeToLevelOrder(actual), expected);
+    }
+
     return 0;
 }
