@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 划分字母区间
-// https://leetcode.cn/problems/partition-labels/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
