@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 合并 K 个升序链表
-// https://leetcode.cn/problems/merge-k-sorted-lists/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;

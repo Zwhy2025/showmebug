@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 合并 K 个升序链表
+// https://leetcode.cn/problems/merge-k-sorted-lists/
 // Definition for singly-linked list.
 struct ListNode {
     int val;
