@@ -14,17 +14,17 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> nums1{/* TODO */};
-    vector<int> nums2{/* TODO */};
-        double expected = 0;
-        auto actual = s.findMedianSortedArrays(nums1, nums2);
-        checkEqual("sample-1", actual, expected);
+        vector<int> nums1{1,3}, nums2{2};
+        checkEqual("sample-1", s.findMedianSortedArrays(nums1, nums2), 2.0);
+    }
+
+    {
+        vector<int> nums1{1,2}, nums2{3,4};
+        checkEqual("sample-2", s.findMedianSortedArrays(nums1, nums2), 2.5);
     }
 
     return 0;
