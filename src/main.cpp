@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 翻转二叉树
-// https://leetcode.cn/problems/invert-binary-tree/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
