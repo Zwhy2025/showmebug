@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 寻找两个正序数组的中位数
-// https://leetcode.cn/problems/median-of-two-sorted-arrays/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
