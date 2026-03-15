@@ -14,16 +14,21 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<vector<int>> intervals{/* TODO */};
-        vector<vector<int>> expected{/* TODO */};
+        vector<vector<int>> intervals{{1,3},{2,6},{8,10},{15,18}};
+        vector<vector<int>> expected{{1,6},{8,10},{15,18}};
         auto actual = s.merge(intervals);
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        vector<vector<int>> intervals{{1,4},{4,5}};
+        vector<vector<int>> expected{{1,5}};
+        auto actual = s.merge(intervals);
+        checkEqual("sample-2", actual, expected);
     }
 
     return 0;
