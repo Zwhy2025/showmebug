@@ -6,14 +6,9 @@
 
 using namespace std;
 
+#include <unordered_set>
+
 #include "solution.hpp"
-
-template <typename T>
-void checkEqual(const string &caseName, const T &actual, const T &expected) {
-    bool pass = actual == expected;
-    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
-}
-
 
 ListNode *buildList(const vector<int> &values) {
     ListNode dummy(0);
@@ -26,24 +21,56 @@ ListNode *buildList(const vector<int> &values) {
 }
 
 vector<int> listToVector(ListNode *head) {
-    vector<int> values;
-    for (ListNode *node = head; node != nullptr; node = node->next) {
-        values.push_back(node->val);
+    vector<int> result;
+    while (head != nullptr) {
+        result.push_back(head->val);
+        head = head->next;
     }
-    return values;
+    return result;
 }
 
+void freeList(ListNode *head) {
+    while (head != nullptr) {
+        ListNode *next = head->next;
+        delete head;
+        head = next;
+    }
+}
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
 
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    ListNode* list1 = buildList({/* TODO */});
-    ListNode* list2 = buildList({/* TODO */});
-        vector<int> expected{/* TODO */};
-        auto actual = s.mergeTwoLists(list1, list2);
-        checkEqual("sample-1", listToVector(actual), expected);
+        ListNode *l1 = buildList({1,2,4});
+        ListNode *l2 = buildList({1,3,4});
+        vector<int> expected{1,1,2,3,4,4};
+        ListNode *result = s.mergeTwoLists(l1, l2);
+        checkEqual("sample-1", listToVector(result), expected);
+        freeList(result);
+    }
+
+    {
+        ListNode *l1 = buildList({});
+        ListNode *l2 = buildList({});
+        vector<int> expected{};
+        ListNode *result = s.mergeTwoLists(l1, l2);
+        checkEqual("sample-2", listToVector(result), expected);
+        freeList(result);
+    }
+
+    {
+        ListNode *l1 = buildList({});
+        ListNode *l2 = buildList({0});
+        vector<int> expected{0};
+        ListNode *result = s.mergeTwoLists(l1, l2);
+        checkEqual("sample-3", listToVector(result), expected);
+        freeList(result);
     }
 
     return 0;
