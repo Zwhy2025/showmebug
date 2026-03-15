@@ -14,17 +14,12 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
-    {
-        // TODO: replace the placeholders below with a real sample.
-    string s = "";
-        int expected = 0;
-        auto actual = s.longestValidParentheses(s);
-        checkEqual("sample-1", actual, expected);
-    }
+    checkEqual("sample-1", s.longestValidParentheses("(()"), 2);
+    checkEqual("sample-2", s.longestValidParentheses(")()())"), 4);
+    checkEqual("sample-3", s.longestValidParentheses(""), 0);
 
     return 0;
 }
