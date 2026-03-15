@@ -14,17 +14,28 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    string s = "";
-    string t = "";
-        string expected = "";
-        auto actual = s.minWindow(s, t);
+        string str = "ADOBECODEBANC", t = "ABC";
+        string expected = "BANC";
+        auto actual = s.minWindow(str, t);
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        string str = "a", t = "a";
+        string expected = "a";
+        auto actual = s.minWindow(str, t);
+        checkEqual("sample-2", actual, expected);
+    }
+
+    {
+        string str = "a", t = "aa";
+        string expected = "";
+        auto actual = s.minWindow(str, t);
+        checkEqual("sample-3", actual, expected);
     }
 
     return 0;
