@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 在排序数组中查找元素的第一个和最后一个位置
-// https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
