@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 颜色分类
-// https://leetcode.cn/problems/sort-colors/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
