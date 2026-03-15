@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 单词拆分
-// https://leetcode.cn/problems/word-break/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
