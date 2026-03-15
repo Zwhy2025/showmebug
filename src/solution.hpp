@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 最小覆盖子串
+// https://leetcode.cn/problems/minimum-window-substring/
 class Solution {
 public:
     string minWindow(string s, string t) {
