@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 删除链表的倒数第 N 个结点
-// https://leetcode.cn/problems/remove-nth-node-from-end-of-list/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
