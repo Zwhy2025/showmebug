@@ -22,11 +22,31 @@ int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> prices{/* TODO */};
-        int expected = 0;
+        vector<int> prices{7, 1, 5, 3, 6, 4};
+        int expected = 5;
         auto actual = s.maxProfit(prices);
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        vector<int> prices{7, 6, 4, 3, 1};
+        int expected = 0;
+        auto actual = s.maxProfit(prices);
+        checkEqual("sample-2", actual, expected);
+    }
+
+    {
+        vector<int> prices{2, 4, 1};
+        int expected = 2;
+        auto actual = s.maxProfit(prices);
+        checkEqual("sample-3", actual, expected);
+    }
+
+    {
+        vector<int> prices{1};
+        int expected = 0;
+        auto actual = s.maxProfit(prices);
+        checkEqual("sample-4", actual, expected);
     }
 
     return 0;
