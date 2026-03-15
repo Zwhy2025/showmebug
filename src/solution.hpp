@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 二叉树的右视图
+// https://leetcode.cn/problems/binary-tree-right-side-view/
 // Definition for a binary tree node.
 struct TreeNode {
     int val;

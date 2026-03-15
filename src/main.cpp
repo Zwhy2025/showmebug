@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 二叉树的右视图
-// https://leetcode.cn/problems/binary-tree-right-side-view/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
