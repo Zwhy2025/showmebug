@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 腐烂的橘子
-// https://leetcode.cn/problems/rotting-oranges/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
