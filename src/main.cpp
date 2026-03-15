@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 从前序与中序遍历序列构造二叉树
-// https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
