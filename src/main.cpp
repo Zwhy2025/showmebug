@@ -14,16 +14,17 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> nums{/* TODO */};
-        bool expected = false;
-        auto actual = s.canPartition(nums);
-        checkEqual("sample-1", actual, expected);
+        vector<int> nums{1,5,11,5};
+        checkEqual("sample-1", s.canPartition(nums), true);
+    }
+
+    {
+        vector<int> nums{1,2,3,5};
+        checkEqual("sample-2", s.canPartition(nums), false);
     }
 
     return 0;
