@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 两两交换链表中的节点
-// https://leetcode.cn/problems/swap-nodes-in-pairs/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
