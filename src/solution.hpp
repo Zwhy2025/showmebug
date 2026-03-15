@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 两数之和
+// https://leetcode.cn/problems/two-sum/
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {

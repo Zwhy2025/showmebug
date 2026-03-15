@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 两数之和
-// https://leetcode.cn/problems/two-sum/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
