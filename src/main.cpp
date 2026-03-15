@@ -14,18 +14,11 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
-    {
-        // TODO: replace the placeholders below with a real sample.
-    string word1 = "";
-    string word2 = "";
-        int expected = 0;
-        auto actual = s.minDistance(word1, word2);
-        checkEqual("sample-1", actual, expected);
-    }
+    checkEqual("sample-1", s.minDistance("horse", "ros"), 3);
+    checkEqual("sample-2", s.minDistance("intention", "execution"), 5);
 
     return 0;
 }
