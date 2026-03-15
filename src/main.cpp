@@ -14,17 +14,16 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    string s = "";
-        string expected = "";
-        auto actual = s.longestPalindrome(s);
-        checkEqual("sample-1", actual, expected);
+        auto actual = s.longestPalindrome("babad");
+        bool ok = actual == "bab" || actual == "aba";
+        checkEqual("sample-1", ok, true);
     }
+
+    checkEqual("sample-2", s.longestPalindrome("cbbd"), string("bb"));
 
     return 0;
 }
