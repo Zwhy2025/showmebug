@@ -14,16 +14,17 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> nums{/* TODO */};
-        int expected = 0;
-        auto actual = s.majorityElement(nums);
-        checkEqual("sample-1", actual, expected);
+        vector<int> nums{3,2,3};
+        checkEqual("sample-1", s.majorityElement(nums), 3);
+    }
+
+    {
+        vector<int> nums{2,2,1,1,1,2,2};
+        checkEqual("sample-2", s.majorityElement(nums), 2);
     }
 
     return 0;
