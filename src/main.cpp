@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 最长有效括号
-// https://leetcode.cn/problems/longest-valid-parentheses/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
