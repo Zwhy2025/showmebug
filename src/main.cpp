@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 找到字符串中所有字母异位词
-// https://leetcode.cn/problems/find-all-anagrams-in-a-string/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
