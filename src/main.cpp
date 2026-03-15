@@ -14,17 +14,11 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
-    {
-        // TODO: replace the placeholders below with a real sample.
-    int n = 0;
-        int expected = 0;
-        auto actual = s.numSquares(n);
-        checkEqual("sample-1", actual, expected);
-    }
+    checkEqual("sample-1", s.numSquares(12), 3);
+    checkEqual("sample-2", s.numSquares(13), 2);
 
     return 0;
 }
