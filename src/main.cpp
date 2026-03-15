@@ -14,14 +14,15 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
-    // TODO: add operation-based tests for MedianFinder.
-    // Example:
-    // MedianFinder obj(/* TODO */);
-    // auto actual = obj.someMethod(/* TODO */);
-    // int expected = 0;
-    // checkEqual("sample-1", actual, expected);
-    cout << "Edit src/main.cpp to add operation-based tests." << '\n';
+    {
+        MedianFinder mf;
+        mf.addNum(1);
+        mf.addNum(2);
+        checkEqual("median-1", mf.findMedian(), 1.5);
+        mf.addNum(3);
+        checkEqual("median-2", mf.findMedian(), 2.0);
+    }
+
     return 0;
 }
