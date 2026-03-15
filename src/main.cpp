@@ -14,17 +14,23 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> nums{/* TODO */};
-    int k = 0;
-        int expected = 0;
+        vector<int> nums{1,1,1};
+        int k = 2;
+        int expected = 2;
         auto actual = s.subarraySum(nums, k);
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        vector<int> nums{1,2,3};
+        int k = 3;
+        int expected = 2;
+        auto actual = s.subarraySum(nums, k);
+        checkEqual("sample-2", actual, expected);
     }
 
     return 0;
