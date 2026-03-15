@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 寻找重复数
-// https://leetcode.cn/problems/find-the-duplicate-number/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
