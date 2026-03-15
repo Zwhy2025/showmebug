@@ -14,16 +14,17 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> heights{/* TODO */};
-        int expected = 0;
-        auto actual = s.largestRectangleArea(heights);
-        checkEqual("sample-1", actual, expected);
+        vector<int> heights{2,1,5,6,2,3};
+        checkEqual("sample-1", s.largestRectangleArea(heights), 10);
+    }
+
+    {
+        vector<int> heights{2,4};
+        checkEqual("sample-2", s.largestRectangleArea(heights), 4);
     }
 
     return 0;
