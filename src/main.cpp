@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 实现 Trie (前缀树)
-// https://leetcode.cn/problems/implement-trie-prefix-tree/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;

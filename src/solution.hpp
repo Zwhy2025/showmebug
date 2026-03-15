@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 实现 Trie (前缀树)
+// https://leetcode.cn/problems/implement-trie-prefix-tree/
 class Trie {
 public:
     Trie() {
