@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 搜索二维矩阵
-// https://leetcode.cn/problems/search-a-2d-matrix/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
