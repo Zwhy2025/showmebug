@@ -14,16 +14,17 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<vector<int>> grid{/* TODO */};
-        int expected = 0;
-        auto actual = s.minPathSum(grid);
-        checkEqual("sample-1", actual, expected);
+        vector<vector<int>> grid{{1,3,1},{1,5,1},{4,2,1}};
+        checkEqual("sample-1", s.minPathSum(grid), 7);
+    }
+
+    {
+        vector<vector<int>> grid{{1,2,3},{4,5,6}};
+        checkEqual("sample-2", s.minPathSum(grid), 12);
     }
 
     return 0;
