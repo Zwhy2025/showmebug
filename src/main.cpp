@@ -6,14 +6,9 @@
 
 using namespace std;
 
+#include <unordered_set>
+
 #include "solution.hpp"
-
-template <typename T>
-void checkEqual(const string &caseName, const T &actual, const T &expected) {
-    bool pass = actual == expected;
-    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
-}
-
 
 ListNode *buildList(const vector<int> &values) {
     ListNode dummy(0);
@@ -26,23 +21,53 @@ ListNode *buildList(const vector<int> &values) {
 }
 
 vector<int> listToVector(ListNode *head) {
-    vector<int> values;
-    for (ListNode *node = head; node != nullptr; node = node->next) {
-        values.push_back(node->val);
+    vector<int> result;
+    while (head != nullptr) {
+        result.push_back(head->val);
+        head = head->next;
     }
-    return values;
+    return result;
 }
 
+void freeList(ListNode *head) {
+    while (head != nullptr) {
+        ListNode *next = head->next;
+        delete head;
+        head = next;
+    }
+}
+
+template <typename T>
+void checkEqual(const string &caseName, const T &actual, const T &expected) {
+    bool pass = actual == expected;
+    cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
+}
 
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    ListNode* head = buildList({/* TODO */});
-        vector<int> expected{/* TODO */};
-        auto actual = s.reverseList(head);
-        checkEqual("sample-1", listToVector(actual), expected);
+        ListNode *head = buildList({1,2,3,4,5});
+        vector<int> expected{5,4,3,2,1};
+        ListNode *result = s.reverseList(head);
+        checkEqual("sample-1", listToVector(result), expected);
+        freeList(result);
+    }
+
+    {
+        ListNode *head = buildList({1,2});
+        vector<int> expected{2,1};
+        ListNode *result = s.reverseList(head);
+        checkEqual("sample-2", listToVector(result), expected);
+        freeList(result);
+    }
+
+    {
+        ListNode *head = buildList({});
+        vector<int> expected{};
+        ListNode *result = s.reverseList(head);
+        checkEqual("sample-3", listToVector(result), expected);
+        freeList(result);
     }
 
     return 0;
