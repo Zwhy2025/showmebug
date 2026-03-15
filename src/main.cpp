@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 杨辉三角
-// https://leetcode.cn/problems/pascals-triangle/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
