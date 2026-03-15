@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 跳跃游戏 II
-// https://leetcode.cn/problems/jump-game-ii/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
