@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 搜索插入位置
-// https://leetcode.cn/problems/search-insert-position/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
