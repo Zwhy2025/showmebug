@@ -28,15 +28,13 @@ class Solution {
   public:
     int maxSubArray(vector<int> &nums) {
 
-        int max_val = INT_MIN;
-        for (int i = 0; i < nums.size(); ++i) {
+        int dp_1 = nums[0], max_val = nums[0];
+        for (int i = 1; i < nums.size(); ++i) {
 
-            for (int j = i + 1; j <= nums.size(); ++j) {
+            auto cur = std::max(nums[i], dp_1 + nums[i]);
 
-                auto val = std::accumulate(nums.begin() + i, nums.begin() + j, 0);
-
-                max_val = (val > max_val) ? val : max_val;
-            }
+            max_val = std::max(cur, max_val);
+            dp_1 = cur;
         }
         return max_val;
     }
