@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 二叉搜索树中第 K 小的元素
-// https://leetcode.cn/problems/kth-smallest-element-in-a-bst/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
