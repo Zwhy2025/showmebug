@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 数据流的中位数
-// https://leetcode.cn/problems/find-median-from-data-stream/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
