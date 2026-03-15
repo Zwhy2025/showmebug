@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 字符串解码
-// https://leetcode.cn/problems/decode-string/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
