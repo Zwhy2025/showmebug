@@ -14,17 +14,17 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<vector<int>> matrix{/* TODO */};
-    int target = 0;
-        bool expected = false;
-        auto actual = s.searchMatrix(matrix, target);
-        checkEqual("sample-1", actual, expected);
+        vector<vector<int>> matrix{{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
+        checkEqual("sample-1", s.searchMatrix(matrix, 5), true);
+    }
+
+    {
+        vector<vector<int>> matrix{{1,4,7,11,15},{2,5,8,12,19},{3,6,9,16,22},{10,13,14,17,24},{18,21,23,26,30}};
+        checkEqual("sample-2", s.searchMatrix(matrix, 20), false);
     }
 
     return 0;
