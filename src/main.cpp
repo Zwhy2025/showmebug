@@ -14,16 +14,23 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
+#include <algorithm>
 
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    int n = 0;
-        vector<vector<string>> expected{/* TODO */};
-        auto actual = s.solveNQueens(n);
+        auto actual = s.solveNQueens(4);
+        sort(actual.begin(), actual.end());
+        vector<vector<string>> expected{{".Q..","...Q","Q...","..Q."},{"..Q.","Q...","...Q",".Q.."}};
+        sort(expected.begin(), expected.end());
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        auto actual = s.solveNQueens(1);
+        vector<vector<string>> expected{{"Q"}};
+        checkEqual("sample-2", actual, expected);
     }
 
     return 0;
