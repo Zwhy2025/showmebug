@@ -14,17 +14,22 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> nums{/* TODO */};
-    int target = 0;
-        int expected = 0;
-        auto actual = s.searchInsert(nums, target);
-        checkEqual("sample-1", actual, expected);
+        vector<int> nums{1,3,5,6};
+        checkEqual("sample-1", s.searchInsert(nums, 5), 2);
+    }
+
+    {
+        vector<int> nums{1,3,5,6};
+        checkEqual("sample-2", s.searchInsert(nums, 2), 1);
+    }
+
+    {
+        vector<int> nums{1,3,5,6};
+        checkEqual("sample-3", s.searchInsert(nums, 7), 4);
     }
 
     return 0;
