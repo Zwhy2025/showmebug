@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 字母异位词分组
+// https://leetcode.cn/problems/group-anagrams/
 class Solution {
 public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
