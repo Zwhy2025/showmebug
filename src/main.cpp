@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 二叉树中的最大路径和
-// https://leetcode.cn/problems/binary-tree-maximum-path-sum/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
