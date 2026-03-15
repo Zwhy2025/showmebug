@@ -22,11 +22,31 @@ int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> nums{/* TODO */};
-        int expected = 0;
+        vector<int> nums{-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        int expected = 6;
         auto actual = s.maxSubArray(nums);
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        vector<int> nums{1};
+        int expected = 1;
+        auto actual = s.maxSubArray(nums);
+        checkEqual("sample-2", actual, expected);
+    }
+
+    {
+        vector<int> nums{5, 4, -1, 7, 8};
+        int expected = 23;
+        auto actual = s.maxSubArray(nums);
+        checkEqual("sample-3", actual, expected);
+    }
+
+    {
+        vector<int> nums{-1, -2, -3};
+        int expected = -1;
+        auto actual = s.maxSubArray(nums);
+        checkEqual("sample-4", actual, expected);
     }
 
     return 0;
