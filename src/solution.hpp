@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 回文链表
+// https://leetcode.cn/problems/palindrome-linked-list/
 // Definition for singly-linked list.
 struct ListNode {
     int val;
