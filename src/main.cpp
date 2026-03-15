@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 最长公共子序列
-// https://leetcode.cn/problems/longest-common-subsequence/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
