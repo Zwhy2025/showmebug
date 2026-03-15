@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 岛屿数量
-// https://leetcode.cn/problems/number-of-islands/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
