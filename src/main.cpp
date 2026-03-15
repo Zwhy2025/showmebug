@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 只出现一次的数字
-// https://leetcode.cn/problems/single-number/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
