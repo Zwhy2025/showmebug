@@ -14,18 +14,12 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
-    {
-        // TODO: replace the placeholders below with a real sample.
-    string text1 = "";
-    string text2 = "";
-        int expected = 0;
-        auto actual = s.longestCommonSubsequence(text1, text2);
-        checkEqual("sample-1", actual, expected);
-    }
+    checkEqual("sample-1", s.longestCommonSubsequence("abcde", "ace"), 3);
+    checkEqual("sample-2", s.longestCommonSubsequence("abc", "abc"), 3);
+    checkEqual("sample-3", s.longestCommonSubsequence("abc", "def"), 0);
 
     return 0;
 }
