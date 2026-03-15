@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 旋转图像
-// https://leetcode.cn/problems/rotate-image/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
