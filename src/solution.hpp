@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 接雨水
+// https://leetcode.cn/problems/trapping-rain-water/
 class Solution {
 public:
     int trap(vector<int>& height) {

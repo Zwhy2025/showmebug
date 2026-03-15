@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 接雨水
-// https://leetcode.cn/problems/trapping-rain-water/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
