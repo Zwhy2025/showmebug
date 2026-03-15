@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 分割回文串
-// https://leetcode.cn/problems/palindrome-partitioning/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
