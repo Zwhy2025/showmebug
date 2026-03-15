@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 螺旋矩阵
-// https://leetcode.cn/problems/spiral-matrix/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
