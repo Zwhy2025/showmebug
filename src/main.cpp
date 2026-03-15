@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 盛最多水的容器
-// https://leetcode.cn/problems/container-with-most-water/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;

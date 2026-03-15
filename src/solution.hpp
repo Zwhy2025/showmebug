@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 盛最多水的容器
+// https://leetcode.cn/problems/container-with-most-water/
 class Solution {
 public:
     int maxArea(vector<int>& height) {
