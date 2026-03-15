@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 路径总和 III
-// https://leetcode.cn/problems/path-sum-iii/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
