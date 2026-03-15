@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 电话号码的字母组合
-// https://leetcode.cn/problems/letter-combinations-of-a-phone-number/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
