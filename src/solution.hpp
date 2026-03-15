@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 对称二叉树
+// https://leetcode.cn/problems/symmetric-tree/
 // Definition for a binary tree node.
 struct TreeNode {
     int val;

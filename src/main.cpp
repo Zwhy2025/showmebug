@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 对称二叉树
-// https://leetcode.cn/problems/symmetric-tree/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
