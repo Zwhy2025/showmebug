@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 寻找旋转排序数组中的最小值
-// https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
