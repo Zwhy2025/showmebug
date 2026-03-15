@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 数组中的第K个最大元素
-// https://leetcode.cn/problems/kth-largest-element-in-an-array/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
