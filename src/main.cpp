@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 二叉树的中序遍历
-// https://leetcode.cn/problems/binary-tree-inorder-traversal/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
