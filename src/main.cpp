@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 最长递增子序列
-// https://leetcode.cn/problems/longest-increasing-subsequence/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
