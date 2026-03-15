@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 分割等和子集
-// https://leetcode.cn/problems/partition-equal-subset-sum/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
