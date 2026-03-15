@@ -14,14 +14,17 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
-    // TODO: add operation-based tests for MinStack.
-    // Example:
-    // MinStack obj(/* TODO */);
-    // auto actual = obj.someMethod(/* TODO */);
-    // int expected = 0;
-    // checkEqual("sample-1", actual, expected);
-    cout << "Edit src/main.cpp to add operation-based tests." << '\n';
+    {
+        MinStack ms;
+        ms.push(-2);
+        ms.push(0);
+        ms.push(-3);
+        checkEqual("getMin-1", ms.getMin(), -3);
+        ms.pop();
+        checkEqual("top-1", ms.top(), 0);
+        checkEqual("getMin-2", ms.getMin(), -2);
+    }
+
     return 0;
 }
