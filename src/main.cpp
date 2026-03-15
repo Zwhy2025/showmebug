@@ -22,11 +22,31 @@ int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    int n = 0;
-        int expected = 0;
+        int n = 2;
+        int expected = 2;
         auto actual = s.climbStairs(n);
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        int n = 3;
+        int expected = 3;
+        auto actual = s.climbStairs(n);
+        checkEqual("sample-2", actual, expected);
+    }
+
+    {
+        int n = 1;
+        int expected = 1;
+        auto actual = s.climbStairs(n);
+        checkEqual("sample-3", actual, expected);
+    }
+
+    {
+        int n = 5;
+        int expected = 8;
+        auto actual = s.climbStairs(n);
+        checkEqual("sample-4", actual, expected);
     }
 
     return 0;
