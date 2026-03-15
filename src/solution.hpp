@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 二叉树的直径
+// https://leetcode.cn/problems/diameter-of-binary-tree/
 // Definition for a binary tree node.
 struct TreeNode {
     int val;
