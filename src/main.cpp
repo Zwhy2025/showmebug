@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 最大子数组和
-// https://leetcode.cn/problems/maximum-subarray/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;

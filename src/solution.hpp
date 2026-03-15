@@ -24,6 +24,8 @@
 
 using namespace std;
 
+// 最大子数组和
+// https://leetcode.cn/problems/maximum-subarray/
 class Solution {
   public:
     int maxSubArray(vector<int> &nums) {
