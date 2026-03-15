@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// LRU 缓存
+// https://leetcode.cn/problems/lru-cache/
 class LRUCache {
 public:
     LRUCache(int capacity) {

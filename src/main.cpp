@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// LRU 缓存
-// https://leetcode.cn/problems/lru-cache/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
