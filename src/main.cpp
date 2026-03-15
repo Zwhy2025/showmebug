@@ -16,14 +16,41 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
 
 
 int main() {
-    Solution s;
+    Solution solver;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    string s = "";
-        bool expected = false;
-        auto actual = s.isValid(s);
+        string input = "()";
+        bool expected = true;
+        auto actual = solver.isValid(input);
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        string input = "()[]{}";
+        bool expected = true;
+        auto actual = solver.isValid(input);
+        checkEqual("sample-2", actual, expected);
+    }
+
+    {
+        string input = "(]";
+        bool expected = false;
+        auto actual = solver.isValid(input);
+        checkEqual("sample-3", actual, expected);
+    }
+
+    {
+        string input = "([)]";
+        bool expected = false;
+        auto actual = solver.isValid(input);
+        checkEqual("sample-4", actual, expected);
+    }
+
+    {
+        string input = "{[]}";
+        bool expected = true;
+        auto actual = solver.isValid(input);
+        checkEqual("sample-5", actual, expected);
     }
 
     return 0;

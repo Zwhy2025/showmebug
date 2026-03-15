@@ -6,6 +6,7 @@
 #include <cmath>
 #include <cstdint>
 #include <deque>
+#include <exception>
 #include <functional>
 #include <limits>
 #include <map>
@@ -14,6 +15,7 @@
 #include <queue>
 #include <set>
 #include <stack>
+#include <stdexcept>
 #include <string>
 #include <tuple>
 #include <unordered_map>
@@ -26,8 +28,35 @@ using namespace std;
 // 有效的括号
 // https://leetcode.cn/problems/valid-parentheses/
 class Solution {
-public:
+  public:
+    char CP(char c) {
+        if (c == '(') {
+            return ')';
+        } else if (c == '[') {
+            return ']';
+        } else if (c == '{') {
+            return '}';
+        } else {
+            return '0';
+        }
+    }
+
     bool isValid(string s) {
-        
+
+        std::stack<char> stc;
+        for (auto &c : s) {
+            auto val = '1';
+            if (!stc.empty()) {
+                val = CP(stc.top());
+            }
+            if (!stc.empty() && val == c) {
+                stc.pop();
+            } else if (val == '0') {
+                stc.push(c);
+            } else {
+                stc.push(c);
+            }
+        }
+        return stc.empty();
     }
 };
