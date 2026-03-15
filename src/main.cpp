@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 组合总和
-// https://leetcode.cn/problems/combination-sum/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
