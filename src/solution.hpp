@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 二叉树展开为链表
+// https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/
 // Definition for a binary tree node.
 struct TreeNode {
     int val;
