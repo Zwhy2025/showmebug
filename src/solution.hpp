@@ -34,8 +34,28 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 class Solution {
-public:
-    ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
-        
+  public:
+    ListNode *mergeTwoLists(ListNode *list1, ListNode *list2) {
+        vector<int> vec;
+        while (list1) {
+            vec.push_back(list1->val);
+            list1 = list1->next;
+        }
+
+        while (list2) {
+            vec.push_back(list2->val);
+            list2 = list2->next;
+        }
+
+        std::sort(vec.begin(), vec.end());
+
+        ListNode *dummy = new ListNode(-1);
+        auto it = dummy;
+        for (auto &val : vec) {
+            it->next = new ListNode(val);
+            it = it->next;
+        }
+
+        return dummy->next;
     }
 };
