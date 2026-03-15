@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 搜索旋转排序数组
-// https://leetcode.cn/problems/search-in-rotated-sorted-array/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
