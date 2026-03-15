@@ -14,18 +14,11 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
-    {
-        // TODO: replace the placeholders below with a real sample.
-    int m = 0;
-    int n = 0;
-        int expected = 0;
-        auto actual = s.uniquePaths(m, n);
-        checkEqual("sample-1", actual, expected);
-    }
+    checkEqual("sample-1", s.uniquePaths(3, 7), 28);
+    checkEqual("sample-2", s.uniquePaths(3, 2), 3);
 
     return 0;
 }
