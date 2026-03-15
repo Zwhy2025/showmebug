@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 随机链表的复制
-// https://leetcode.cn/problems/copy-list-with-random-pointer/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;

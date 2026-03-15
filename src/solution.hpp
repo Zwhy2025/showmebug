@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 随机链表的复制
+// https://leetcode.cn/problems/copy-list-with-random-pointer/
 // Definition for a Node.
 class Node {
 public:
