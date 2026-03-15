@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 前 K 个高频元素
-// https://leetcode.cn/problems/top-k-frequent-elements/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
