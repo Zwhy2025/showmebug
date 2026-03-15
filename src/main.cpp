@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 买卖股票的最佳时机
-// https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
