@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 柱状图中最大的矩形
-// https://leetcode.cn/problems/largest-rectangle-in-histogram/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
