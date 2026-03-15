@@ -59,4 +59,30 @@ class Solution {
         }
         return stc.empty();
     }
+
+    /*
+    bool isValid(string s) {
+        if (s.size() % 2 == 1) {
+            return false;
+        }
+
+        stack<char> stc;
+        for (char c : s) {
+            if (c == '(') {
+                stc.push(')');
+            } else if (c == '[') {
+                stc.push(']');
+            } else if (c == '{') {
+                stc.push('}');
+            } else {
+                if (stc.empty() || stc.top() != c) {
+                    return false;
+                }
+                stc.pop();
+            }
+        }
+
+        return stc.empty();
+    }
+    */
 };
