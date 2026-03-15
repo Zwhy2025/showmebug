@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 除了自身以外数组的乘积
+// https://leetcode.cn/problems/product-of-array-except-self/
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {

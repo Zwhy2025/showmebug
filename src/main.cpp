@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 除了自身以外数组的乘积
-// https://leetcode.cn/problems/product-of-array-except-self/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
