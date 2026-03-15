@@ -14,17 +14,22 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<vector<char>> board{/* TODO */};
-    string word = "";
-        bool expected = false;
-        auto actual = s.exist(board, word);
-        checkEqual("sample-1", actual, expected);
+        vector<vector<char>> board{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+        checkEqual("sample-1", s.exist(board, "ABCCED"), true);
+    }
+
+    {
+        vector<vector<char>> board{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+        checkEqual("sample-2", s.exist(board, "SEE"), true);
+    }
+
+    {
+        vector<vector<char>> board{{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+        checkEqual("sample-3", s.exist(board, "ABCB"), false);
     }
 
     return 0;
