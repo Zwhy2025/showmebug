@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 合并两个有序链表
-// https://leetcode.cn/problems/merge-two-sorted-lists/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
