@@ -14,17 +14,21 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    string s = "";
-    string p = "";
-        vector<int> expected{/* TODO */};
-        auto actual = s.findAnagrams(s, p);
+        string str = "cbaebabacd", p = "abc";
+        vector<int> expected{0, 6};
+        auto actual = s.findAnagrams(str, p);
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        string str = "abab", p = "ab";
+        vector<int> expected{0, 1, 2};
+        auto actual = s.findAnagrams(str, p);
+        checkEqual("sample-2", actual, expected);
     }
 
     return 0;
