@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 无重复字符的最长子串
-// https://leetcode.cn/problems/longest-substring-without-repeating-characters/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
