@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 下一个排列
-// https://leetcode.cn/problems/next-permutation/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
