@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 括号生成
-// https://leetcode.cn/problems/generate-parentheses/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
