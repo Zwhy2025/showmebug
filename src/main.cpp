@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// K 个一组翻转链表
-// https://leetcode.cn/problems/reverse-nodes-in-k-group/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
