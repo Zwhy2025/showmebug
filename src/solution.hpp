@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 合并区间
+// https://leetcode.cn/problems/merge-intervals/
 class Solution {
 public:
     vector<vector<int>> merge(vector<vector<int>>& intervals) {
