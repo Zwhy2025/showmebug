@@ -14,14 +14,16 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
-    // TODO: add operation-based tests for Trie.
-    // Example:
-    // Trie obj(/* TODO */);
-    // auto actual = obj.someMethod(/* TODO */);
-    // int expected = 0;
-    // checkEqual("sample-1", actual, expected);
-    cout << "Edit src/main.cpp to add operation-based tests." << '\n';
+    {
+        Trie trie;
+        trie.insert("apple");
+        checkEqual("search-apple", trie.search("apple"), true);
+        checkEqual("search-app", trie.search("app"), false);
+        checkEqual("startsWith-app", trie.startsWith("app"), true);
+        trie.insert("app");
+        checkEqual("search-app-2", trie.search("app"), true);
+    }
+
     return 0;
 }
