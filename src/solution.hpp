@@ -35,8 +35,27 @@ struct TreeNode {
     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 class Solution {
-public:
-    int maxDepth(TreeNode* root) {
-        
+  public:
+    int _vMaxVal;
+
+    void passTree(TreeNode *next, int num) {
+        if (!next) {
+            return;
+        }
+
+        passTree(next->left, num + 1);
+
+        passTree(next->right, num + 1);
+
+        _vMaxVal = std::max(_vMaxVal, num);
+    }
+
+    int maxDepth(TreeNode *root) {
+        _vMaxVal = 0;
+        if (!root) {
+            return _vMaxVal;
+        }
+        passTree(root, 1);
+        return _vMaxVal;
     }
 };

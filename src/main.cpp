@@ -75,16 +75,49 @@ vector<optional<int>> treeToLevelOrder(TreeNode *root) {
     return values;
 }
 
+void freeTree(TreeNode *root) {
+    if (root == nullptr) {
+        return;
+    }
+    freeTree(root->left);
+    freeTree(root->right);
+    delete root;
+}
+
 
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    TreeNode* root = buildTree({/* TODO: level-order, use nullopt for empty */});
-        int expected = 0;
+        TreeNode *root = buildTree({3, 9, 20, nullopt, nullopt, 15, 7});
+        int expected = 3;
         auto actual = s.maxDepth(root);
         checkEqual("sample-1", actual, expected);
+        freeTree(root);
+    }
+
+    {
+        TreeNode *root = buildTree({1, nullopt, 2});
+        int expected = 2;
+        auto actual = s.maxDepth(root);
+        checkEqual("sample-2", actual, expected);
+        freeTree(root);
+    }
+
+    {
+        TreeNode *root = buildTree({});
+        int expected = 0;
+        auto actual = s.maxDepth(root);
+        checkEqual("sample-3", actual, expected);
+        freeTree(root);
+    }
+
+    {
+        TreeNode *root = buildTree({1});
+        int expected = 1;
+        auto actual = s.maxDepth(root);
+        checkEqual("sample-4", actual, expected);
+        freeTree(root);
     }
 
     return 0;
