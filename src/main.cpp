@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 有效的括号
-// https://leetcode.cn/problems/valid-parentheses/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
