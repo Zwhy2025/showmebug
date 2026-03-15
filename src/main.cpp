@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 最长回文子串
-// https://leetcode.cn/problems/longest-palindromic-substring/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
