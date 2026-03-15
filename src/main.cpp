@@ -14,17 +14,17 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> nums{/* TODO */};
-    int k = 0;
-        int expected = 0;
-        auto actual = s.findKthLargest(nums, k);
-        checkEqual("sample-1", actual, expected);
+        vector<int> nums{3,2,1,5,6,4};
+        checkEqual("sample-1", s.findKthLargest(nums, 2), 5);
+    }
+
+    {
+        vector<int> nums{3,2,3,1,2,4,5,5,6};
+        checkEqual("sample-2", s.findKthLargest(nums, 4), 4);
     }
 
     return 0;
