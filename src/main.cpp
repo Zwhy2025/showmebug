@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 验证二叉搜索树
-// https://leetcode.cn/problems/validate-binary-search-tree/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
