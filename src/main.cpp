@@ -9,9 +9,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 环形链表
-// https://leetcode.cn/problems/linked-list-cycle/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
