@@ -14,16 +14,29 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
+#include <algorithm>
 
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    string digits = "";
-        vector<string> expected{/* TODO */};
-        auto actual = s.letterCombinations(digits);
+        auto actual = s.letterCombinations("23");
+        sort(actual.begin(), actual.end());
+        vector<string> expected{"ad","ae","af","bd","be","bf","cd","ce","cf"};
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        auto actual = s.letterCombinations("");
+        vector<string> expected{};
+        checkEqual("sample-2", actual, expected);
+    }
+
+    {
+        auto actual = s.letterCombinations("2");
+        sort(actual.begin(), actual.end());
+        vector<string> expected{"a","b","c"};
+        checkEqual("sample-3", actual, expected);
     }
 
     return 0;
