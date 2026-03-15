@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 每日温度
-// https://leetcode.cn/problems/daily-temperatures/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
