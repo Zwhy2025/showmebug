@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 和为 K 的子数组
+// https://leetcode.cn/problems/subarray-sum-equals-k/
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {

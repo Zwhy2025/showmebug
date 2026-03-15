@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 和为 K 的子数组
-// https://leetcode.cn/problems/subarray-sum-equals-k/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
