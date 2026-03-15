@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 排序链表
+// https://leetcode.cn/problems/sort-list/
 // Definition for singly-linked list.
 struct ListNode {
     int val;
