@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 最小栈
-// https://leetcode.cn/problems/min-stack/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
