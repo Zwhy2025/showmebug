@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 将有序数组转换为二叉搜索树
-// https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
