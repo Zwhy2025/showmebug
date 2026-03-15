@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 矩阵置零
-// https://leetcode.cn/problems/set-matrix-zeroes/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
