@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 打家劫舍
-// https://leetcode.cn/problems/house-robber/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
