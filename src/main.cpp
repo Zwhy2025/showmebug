@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 反转链表
-// https://leetcode.cn/problems/reverse-linked-list/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;

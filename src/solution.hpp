@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 反转链表
+// https://leetcode.cn/problems/reverse-linked-list/
 // Definition for singly-linked list.
 struct ListNode {
     int val;
