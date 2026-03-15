@@ -14,16 +14,17 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
-
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> nums{/* TODO */};
-        int expected = 0;
-        auto actual = s.maxProduct(nums);
-        checkEqual("sample-1", actual, expected);
+        vector<int> nums{2,3,-2,4};
+        checkEqual("sample-1", s.maxProduct(nums), 6);
+    }
+
+    {
+        vector<int> nums{-2,0,-1};
+        checkEqual("sample-2", s.maxProduct(nums), 0);
     }
 
     return 0;
