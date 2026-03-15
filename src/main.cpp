@@ -19,14 +19,41 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
 
 
 int main() {
-    Solution s;
+    Solution solver;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    string s = "";
-        int expected = 0;
-        auto actual = s.lengthOfLongestSubstring(s);
+        string input = "abcabcbb";
+        int expected = 3;
+        auto actual = solver.lengthOfLongestSubstring(input);
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        string input = "bbbbb";
+        int expected = 1;
+        auto actual = solver.lengthOfLongestSubstring(input);
+        checkEqual("sample-2", actual, expected);
+    }
+
+    {
+        string input = "pwwkew";
+        int expected = 3;
+        auto actual = solver.lengthOfLongestSubstring(input);
+        checkEqual("sample-3", actual, expected);
+    }
+
+    {
+        string input = "";
+        int expected = 0;
+        auto actual = solver.lengthOfLongestSubstring(input);
+        checkEqual("sample-4", actual, expected);
+    }
+
+    {
+        string input = " ";
+        int expected = 1;
+        auto actual = solver.lengthOfLongestSubstring(input);
+        checkEqual("sample-5", actual, expected);
     }
 
     return 0;
