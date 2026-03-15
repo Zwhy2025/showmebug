@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 不同路径
-// https://leetcode.cn/problems/unique-paths/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
