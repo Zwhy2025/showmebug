@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 移动零
-// https://leetcode.cn/problems/move-zeroes/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
