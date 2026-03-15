@@ -14,17 +14,34 @@ void checkEqual(const string &caseName, const T &actual, const T &expected) {
     cout << caseName << ": " << (pass ? "PASS" : "FAIL") << '\n';
 }
 
+#include <algorithm>
 
 int main() {
     Solution s;
 
     {
-        // TODO: replace the placeholders below with a real sample.
-    vector<int> candidates{/* TODO */};
-    int target = 0;
-        vector<vector<int>> expected{/* TODO */};
-        auto actual = s.combinationSum(candidates, target);
+        vector<int> candidates{2,3,6,7};
+        auto actual = s.combinationSum(candidates, 7);
+        for (auto &v : actual) sort(v.begin(), v.end());
+        sort(actual.begin(), actual.end());
+        vector<vector<int>> expected{{2,2,3},{7}};
         checkEqual("sample-1", actual, expected);
+    }
+
+    {
+        vector<int> candidates{2,3,5};
+        auto actual = s.combinationSum(candidates, 8);
+        for (auto &v : actual) sort(v.begin(), v.end());
+        sort(actual.begin(), actual.end());
+        vector<vector<int>> expected{{2,2,2,2},{2,3,3},{3,5}};
+        checkEqual("sample-2", actual, expected);
+    }
+
+    {
+        vector<int> candidates{2};
+        auto actual = s.combinationSum(candidates, 1);
+        vector<vector<int>> expected{};
+        checkEqual("sample-3", actual, expected);
     }
 
     return 0;
