@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 滑动窗口最大值
-// https://leetcode.cn/problems/sliding-window-maximum/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;

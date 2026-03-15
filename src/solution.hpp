@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 滑动窗口最大值
+// https://leetcode.cn/problems/sliding-window-maximum/
 class Solution {
 public:
     vector<int> maxSlidingWindow(vector<int>& nums, int k) {
