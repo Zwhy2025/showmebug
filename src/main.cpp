@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 缺失的第一个正数
-// https://leetcode.cn/problems/first-missing-positive/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
