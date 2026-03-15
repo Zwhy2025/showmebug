@@ -23,6 +23,8 @@
 
 using namespace std;
 
+// 相交链表
+// https://leetcode.cn/problems/intersection-of-two-linked-lists/
 // Definition for singly-linked list.
 struct ListNode {
     int val;
