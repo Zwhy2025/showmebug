@@ -8,9 +8,6 @@ using namespace std;
 
 #include "solution.hpp"
 
-// 二叉树的最近公共祖先
-// https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/
-
 template <typename T>
 void checkEqual(const string &caseName, const T &actual, const T &expected) {
     bool pass = actual == expected;
