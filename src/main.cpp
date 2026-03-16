@@ -86,5 +86,12 @@ int main() {
         checkEqual("sample-3", actual, expected);
     }
 
+    {
+        TreeNode *root = buildTree({1, 2, 3, 4, nullopt, nullopt, 5});
+        vector<vector<int>> expected{{1}, {2, 3}, {4, 5}};
+        auto actual = s.levelOrder(root);
+        checkEqual("sample-4", actual, expected);
+    }
+
     return 0;
 }
